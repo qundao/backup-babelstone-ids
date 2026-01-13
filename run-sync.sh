@@ -12,6 +12,11 @@ README_FILE="README.md"
 echo "Intall deps"
 pip install markdownify
 
+if [[ -d "$TEMP_DIR" ]]; then
+    rm -rf $TEMP_DIR
+fi
+mkdir -p $TEMP_DIR
+
 pushd $TEMP_DIR
 
 echo "Downloading readme from $URL..."
