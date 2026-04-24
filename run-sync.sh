@@ -9,8 +9,8 @@ PUA_FILENAME="IDS_PUA.TXT"
 INDEX_FILE="readme.html"
 README_FILE="README.md"
 
-echo "Intall deps"
-pip install markdownify
+echo "Install deps"
+pip install markdownify >/dev/null 2>&1
 
 if [[ -d "$TEMP_DIR" ]]; then
     rm -rf $TEMP_DIR
@@ -37,3 +37,5 @@ popd
 
 echo "sync"
 cp -rf "${TEMP_DIR}"/* ./
+
+echo "DONE"
